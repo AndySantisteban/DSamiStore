@@ -6,5 +6,5 @@
 - More Villegas Fiorella Jhajaira
 - Pacheco Contreras Nicolette Isis
 - Sanchez Pardo Samuel
-- Santisteban Ostos Andy Josue
+- Santi Esteban Ostos Andy Josue
 

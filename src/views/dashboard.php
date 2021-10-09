@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,30 +18,14 @@
     </div>
 
     <div class="container">
-        <form class="card mt-5 mx-auto" style="max-width: 512px;" action="controllers/login.php" method="POST">
-            <div class="card-body">
-                <div class="mt-3 mb-3">
-                    <h1 class="h4 fw-bold text-center">Inicio de sesión</h1>
-                </div>
+    <?php
+        session_start();
 
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input  class="form-control" id="username" placeholder="Ingresa tu nombre de usario" required name="username">
-                </div>
-
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required name="password">
-                </div>
-
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Acceder</button>
-                </div>
-            </div>
-
-        </form>
+        $username = $_SESSION['username'];
+        echo "<h4 align= 'center'>Que gusto tenerte de vuelta {$username}!! 😄</h4>"
+    ?>
     </div>
-
+    
 
     <footer>
         <div class="container">

@@ -10,7 +10,7 @@
 
     $db = mysqli_select_db( $link, $_ENV['DB'] )
     or die ( "Error: No se pudo conectar a la Base de datos" );
-
+/*
     $consulta = "SELECT * FROM Modulo";
 
     $resultado = mysqli_query($link, $consulta) 
@@ -23,5 +23,5 @@
             <td>" . $columna['nombre'] . "</td>";
         echo "</tr>";
     }
-
+*/
 ?>

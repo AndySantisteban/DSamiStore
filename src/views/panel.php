@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -15,18 +14,18 @@
         <div class="container">
             <a href="/" class="navbar-brand fw-bold">D'Sami Store</a>
         </div>
+        <a class= 'btn btn-danger'href="../controllers/logout.php" > Cerrar sesión</a>
     </div>
-
+    
     <div class="container">
     <?php
         session_start();
 
         $username = $_SESSION['username'];
-        echo "<h4 align= 'center'>Que gusto tenerte de vuelta {$username}!! 😄</h4>"
+        echo "<h4 align= 'center'>Que gusto tenerte de vuelta {$username}!! 😄</h4>";
     ?>
     </div>
     
-
     <footer>
         <div class="container">
             <div class="py-5">

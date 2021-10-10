@@ -13,8 +13,12 @@
         $_SESSION['username']= $username;
         header("location: ../views/panel.php");
     }else{
-        echo "Falló algo, vuelve a intentarlo";
-        echo "<a href ='../index.php'> Volver</a>";
+
+        echo    "<div style = 'display:flex;flex-direction:column; justify-content: center; align-items:center; height:100vh'>
+                    <p style='font-family: roboto'>Parece que algo salió mal, vuelve a intentarlo 😓</p>
+                    <a style='font-family: roboto' href ='../index.php'>Volver al Inicio</a>
+                </div>";
+        session_abort();
     }
 
 ?>

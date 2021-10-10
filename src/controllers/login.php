@@ -11,7 +11,7 @@
 
     if ($array['todos']>0){
         $_SESSION['username']= $username;
-        header("location: ../views/dashboard.php");
+        header("location: ../views/panel.php");
     }else{
         echo "Falló algo, vuelve a intentarlo";
         echo "<a href ='../index.php'> Volver</a>";

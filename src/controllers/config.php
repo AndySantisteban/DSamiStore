@@ -10,9 +10,9 @@
 
     $db = mysqli_select_db( $link, $_ENV['DB'] )
     or die ( "Error: No se pudo conectar a la Base de datos" );
-
     function getQuery($consulta){
         return mysqli_query($link, $consulta)
         or die ( "Error: No se pudo realizar la consulta");
     }
+
 ?>

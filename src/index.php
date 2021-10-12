@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <?php require('views/includes/head.php') ?>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -36,7 +36,7 @@
         </form>
     </div>
     <footer>
-        <div class="container">
+        <div class="container position-absolute bottom-0 start-50 translate-middle-x">
             <div class="py-5">
                 <p class="text-center text-muted">© 2021 D'Sami Store</p>
             </div>

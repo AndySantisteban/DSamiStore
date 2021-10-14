@@ -20,6 +20,8 @@ class Rol{
         return $roles;
     } 
     
+
+
     public static function agregar($nombre){
         global $link; 
         $consulta = ("INSERT INTO rol(nombre) VALUES ('" . $nombre . "')");

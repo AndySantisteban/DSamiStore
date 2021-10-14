@@ -2,7 +2,7 @@
 <div class="modal fade" id="agregar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <form name="form-data" action="..\..\controllers\categorias\ingresarCat.php" method="POST">
+      <form name="form-data" action="../../controllers/categorias/agregar.php" method="POST">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">Agregar categoria</h5>
           <button type="button" class="btn-close p-2" data-bs-dismiss="modal" aria-label="Close">

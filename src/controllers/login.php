@@ -11,7 +11,7 @@
 
     if ($array['todos']>0){
         $_SESSION['username']= $username;
-        header("location: ../views/panel.php");
+        header("location: ../views/categorias");
     }else{
 
         echo    "<div style = 'display:flex;flex-direction:column; justify-content: center; align-items:center; height:100vh'>

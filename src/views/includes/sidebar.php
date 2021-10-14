@@ -1,6 +1,6 @@
 <div class="app-sidebar p-3 border-end ">
     <a href="../views/panel.php" class="d-flex text-decoration-none mb-4">
-        <h4 class="fs-4 fw-bold">D' Sami Store</h4>
+        <h4 class="fs-4 fw-bold text-primary">D' Sami Store</h4>
     </a>
     <div class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">

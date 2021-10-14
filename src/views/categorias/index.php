@@ -8,6 +8,7 @@
   <title>Categorias</title>
   <?php include('../includes/head.php') ?>
   <link rel="stylesheet" href="../../public/css/index.css">
+  <link rel="stylesheet" href="../../public/css/bootstrap.css">
 
 </head>
 
@@ -30,14 +31,12 @@
               <input type="text" class="form-control me-2"
                 placeholder="Buscar una categoria" aria-label="Recipient's username"
                 aria-describedby="basic-addon2">
-              <button class="input-group-text  bg-primary text-white" id="basic-addon2" type="button ">Buscar</button>
+              <button class="btn btn-primary" id="basic-addon2" type="button ">Buscar</button>
             </div>
           </div>
         </div>
         <?php include("./includes/agregar_modal.php") ?>
-        <div class="table-responsive">
-          <?php include("../../controllers/categorias/listar.php"); ?>
-        </div>
+        <?php include("../../controllers/categorias/listar.php"); ?>
       </div>
     </div>
   </div>

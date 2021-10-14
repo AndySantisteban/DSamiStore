@@ -2,16 +2,16 @@
 <div class="modal fade" id="agregar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <form name="form-data" action="ingresarCat.php" method="POST">
+      <form name="form-data" action="" method="POST">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Agregar categoria</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Agregar Proveedor</h5>
           <button type="button" class="btn-close p-2" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
         <div class="modal-body">
           <div class="row">
             <div class="col-md-12">
-              <label for="name" class="form-label">Nombre de la categoria</label>
+              <label for="name" class="form-label">Nombre de la Proveedor</label>
               <input type="text" class="form-control" name="nombre" required='true' autofocus>
             </div>
             <div class="col-md-12">

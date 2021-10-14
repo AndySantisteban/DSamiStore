@@ -4,7 +4,7 @@
     </a>
     <div class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="#" class="nav-link active">Categorías</a>
+            <a href="../categorias" class="nav-link active">Categorías</a>
         </li>
         <li>
             <a href="#" class="nav-link link-dark">Productos</a>

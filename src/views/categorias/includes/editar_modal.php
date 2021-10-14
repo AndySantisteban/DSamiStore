@@ -1,5 +1,5 @@
 <!--ventana para Update--->
-<div class="modal fade" id="editarCat<?php echo $dataCategoria['idCategoria']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="editaCat">
+<div class="modal fade" id="editarCat<?php echo $categoria->id; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="editaCat">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,16 +8,16 @@
         </button>
       </div>
 
-      <form method="POST" action="../../controllers/categorias/recib_Update.php">
-        <input type="hidden" name="idCategoria" value="<?php echo $dataCategoria['idCategoria']; ?>">
+      <form method="POST" action="../../controllers/categorias/editar.php">
+        <input type="hidden" name="idCategoria" value="<?php echo $categoria->id; ?>">
         <div class="modal-body" id="cont_modal">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Nombre de la categoria:</label>
-            <input type="text" name="nombre" class="form-control" value="<?php echo $dataCategoria['nombre']; ?>" required="true">
+            <input type="text" name="nombre" class="form-control" value="<?php echo $categoria->nombre; ?>" required="true">
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Descripcion:</label>
-            <input type="text" name="descripcion" class="form-control" value="<?php echo $dataCategoria['descripcion']; ?>" required="true">
+            <input type="text" name="descripcion" class="form-control" value="<?php echo $categoria->descripcion; ?>" placeholder=""required="true">
           </div>
         </div>
         <div class="modal-footer">

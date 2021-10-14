@@ -16,7 +16,7 @@
             <a href="#" class="nav-link link-dark">Proveedores</a>
         </li>
         <li>
-            <a href="#" class="nav-link link-dark">Usuarios</a>
+            <a href="../usuarios" class="nav-link link-dark">Usuarios</a>
         </li>
         <li>
             <a href="../roles" class="nav-link link-dark">Roles</a>

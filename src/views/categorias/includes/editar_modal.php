@@ -11,13 +11,13 @@
       <form method="POST" action="../../controllers/categorias/editar.php">
         <input type="hidden" name="idCategoria" value="<?php echo $categoria->id; ?>">
         <div class="modal-body" id="cont_modal">
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Nombre de la categoria:</label>
-            <input type="text" name="nombre" class="form-control" value="<?php echo $categoria->nombre; ?>" required="true">
+          <div class="form-group mb-3">
+            <label for="recipient-name" class="col-form-label">Nombre</label>
+            <input type="text" name="nombre" placeholder="Nombre" class="form-control" value="<?php echo $categoria->nombre; ?>" required="true">
           </div>
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Descripcion:</label>
-            <input type="text" name="descripcion" class="form-control" value="<?php echo $categoria->descripcion; ?>" placeholder=""required="true">
+            <label for="recipient-name" class="col-form-label">Descripcion</label>
+            <input type="text" name="descripcion" placeholder="Descripción" class="form-control" value="<?php echo $categoria->descripcion; ?>" placeholder=""required="true">
           </div>
         </div>
         <div class="modal-footer">

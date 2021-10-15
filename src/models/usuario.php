@@ -23,11 +23,24 @@ class Usuario{
         $consulta  = ("SELECT U.*, R.nombre nombreRol FROM usuario U INNER JOIN rol R  ON U.idRol = R.idRol ");
         $resultado = mysqli_query($link, $consulta);
         
-
         while ($valor = mysqli_fetch_assoc($resultado)){ 
             $rol = new Rol($valor ['idRol'], $valor['nombreRol'] );
             $usuarios[]= new Usuario($valor['idUsuario'], $valor['nombre'], 
             $valor['password'], $valor['userName'], $valor['email'], $rol);
+        }
+        return $usuarios;
+    } 
+
+
+    public static function listar_General() {
+        global $link;
+        $usuarios = [];
+        $consulta  = ("SELECT U.*, R.nombre nombreRol FROM usuario U INNER JOIN rol R  ON U.idRol = R.idRol ");
+        $resultado = mysqli_query($link, $consulta);
+
+        while ($valor = mysqli_fetch_assoc($resultado)){ 
+            $usuarios[]= new Usuario($valor['idUsuario'], $valor['nombre'], 
+            $valor['password'], $valor['userName'], $valor['email'], $valor['idRol']);
         }
         return $usuarios;
     } 

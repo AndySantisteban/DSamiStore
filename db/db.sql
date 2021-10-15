@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS Imagen(
 	CONSTRAINT pk_imagen PRIMARY KEY (idImagen)
 );
 
-CREATE TABLE IF NOT EXISTS DetalleAlmacen(
+CREATE TABLE IF NOT EXISTS Detalle_Almacen(
 	idDetalleAlmacen INT UNSIGNED AUTO_INCREMENT NOT NULL,
     
     stock INT UNSIGNED,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS Almacen(
     nombre VARCHAR(25),
     
 	CONSTRAINT pk_almacen PRIMARY KEY (idAlmacen),
-	CONSTRAINT fk_almacen_detalleAlmacen FOREIGN KEY (idDetalleAlmacen) REFERENCES DetalleAlmacen(idDetalleAlmacen)
+	CONSTRAINT fk_almacen_detalleAlmacen FOREIGN KEY (idDetalleAlmacen) REFERENCES Detalle_Almacen(idDetalleAlmacen)
 );
 
 CREATE TABLE IF NOT EXISTS Producto(
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS Rol(
 	CONSTRAINT pk_rol PRIMARY KEY (idRol)
 );
 
-CREATE TABLE IF NOT EXISTS RolOperaciones(
+CREATE TABLE IF NOT EXISTS Rol_Operaciones(
 	idRolOperaciones INT UNSIGNED AUTO_INCREMENT  NOT NULL,
 	idRol INT UNSIGNED,
     idOperaciones INT UNSIGNED,
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS Cotizacion(
     CONSTRAINT fk_cotizacion_proveedor FOREIGN KEY (idProveedor) REFERENCES Proveedor(idProveedor)
 );
 
-CREATE TABLE IF NOT EXISTS DetalleCompra(
+CREATE TABLE IF NOT EXISTS Detalle_Compra(
 	idDetalleCompra INT UNSIGNED AUTO_INCREMENT  NOT NULL,
     idCotizacion INT UNSIGNED,
     idProducto INT UNSIGNED,
@@ -179,8 +179,8 @@ INSERT INTO Imagen VALUES (2, 'Taza', '/taza.png');
 INSERT INTO Categoria VALUES (1, 'Protección personal', 'Articulos de proteccion contra el COVID-19');
 INSERT INTO Categoria VALUES (2, 'Hogar y cocina', 'Articulos del hogar');
 
-INSERT INTO DetalleAlmacen VALUES (1, 50);
-INSERT INTO DetalleAlmacen VALUES (2, 100);
+INSERT INTO Detalle_Almacen VALUES (1, 50);
+INSERT INTO Detalle_Almacen VALUES (2, 100);
 
 INSERT INTO Almacen VALUES (1, 1, 'Almacen A');
 INSERT INTO Almacen VALUES (2, 2, 'Almacen B');
@@ -202,28 +202,28 @@ INSERT INTO Usuario VALUES (3, 3, 2, 'Larry', 'larry2021', 'almacen', '@gmail.co
 INSERT INTO Cotizacion VALUES (1, 1, 1, '09-10-2021');
 INSERT INTO Cotizacion VALUES (2, 2, 1, '10-10-2021');
 
-INSERT INTO DetalleCompra VALUES (1, 1, 1, '10-10-2021', 50, 5.0, 250.0);
-INSERT INTO DetalleCompra VALUES (2, 2, 2, '11-10-2021', 30, 7.5, 225.0);
+INSERT INTO Detalle_Compra VALUES (1, 1, 1, '10-10-2021', 50, 5.0, 250.0);
+INSERT INTO Detalle_Compra VALUES (2, 2, 2, '11-10-2021', 30, 7.5, 225.0);
 
-INSERT INTO RolOperaciones VALUES (1, 1, 1 );
-INSERT INTO RolOperaciones VALUES (2, 1, 2 );
-INSERT INTO RolOperaciones VALUES (3, 1, 3 );
-INSERT INTO RolOperaciones VALUES (4, 1, 4 );
-INSERT INTO RolOperaciones VALUES (5, 1, 5 );
-INSERT INTO RolOperaciones VALUES (6, 1, 6 );
-INSERT INTO RolOperaciones VALUES (7, 1, 7 );
-INSERT INTO RolOperaciones VALUES (8, 1, 8 );
-INSERT INTO RolOperaciones VALUES (9, 1, 9 );
-INSERT INTO RolOperaciones VALUES (10, 1, 10 );
-INSERT INTO RolOperaciones VALUES (11, 1, 11 );
+INSERT INTO Rol_Operaciones VALUES (1, 1, 1 );
+INSERT INTO Rol_Operaciones VALUES (2, 1, 2 );
+INSERT INTO Rol_Operaciones VALUES (3, 1, 3 );
+INSERT INTO Rol_Operaciones VALUES (4, 1, 4 );
+INSERT INTO Rol_Operaciones VALUES (5, 1, 5 );
+INSERT INTO Rol_Operaciones VALUES (6, 1, 6 );
+INSERT INTO Rol_Operaciones VALUES (7, 1, 7 );
+INSERT INTO Rol_Operaciones VALUES (8, 1, 8 );
+INSERT INTO Rol_Operaciones VALUES (9, 1, 9 );
+INSERT INTO Rol_Operaciones VALUES (10, 1, 10 );
+INSERT INTO Rol_Operaciones VALUES (11, 1, 11 );
 
-INSERT INTO RolOperaciones VALUES (12, 2, 1 );
-INSERT INTO RolOperaciones VALUES (13, 2, 2 );
-INSERT INTO RolOperaciones VALUES (14, 2, 3 );
-INSERT INTO RolOperaciones VALUES (15, 2, 4 );
-INSERT INTO RolOperaciones VALUES (16, 2, 5 );
-INSERT INTO RolOperaciones VALUES (17, 2, 6 );
-INSERT INTO RolOperaciones VALUES (18, 2, 7 );
-INSERT INTO RolOperaciones VALUES (19, 2, 8 );
-INSERT INTO RolOperaciones VALUES (20, 2, 9 );
-INSERT INTO RolOperaciones VALUES (21, 2, 10 );
+INSERT INTO Rol_Operaciones VALUES (12, 2, 1 );
+INSERT INTO Rol_Operaciones VALUES (13, 2, 2 );
+INSERT INTO Rol_Operaciones VALUES (14, 2, 3 );
+INSERT INTO Rol_Operaciones VALUES (15, 2, 4 );
+INSERT INTO Rol_Operaciones VALUES (16, 2, 5 );
+INSERT INTO Rol_Operaciones VALUES (17, 2, 6 );
+INSERT INTO Rol_Operaciones VALUES (18, 2, 7 );
+INSERT INTO Rol_Operaciones VALUES (19, 2, 8 );
+INSERT INTO Rol_Operaciones VALUES (20, 2, 9 );
+INSERT INTO Rol_Operaciones VALUES (21, 2, 10 );

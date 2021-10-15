@@ -2,9 +2,9 @@
 <div class="modal fade" id="agregar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <form name="form-data" action="" method="POST">
+      <form name="form-data" action="../../controllers/proveedor/agregar.php" method="POST">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Agregar Proveedor</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Agregar proveedor</h5>
           <button type="button" class="btn-close p-2" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
@@ -15,9 +15,18 @@
               <input type="text" class="form-control" name="nombre" required='true' autofocus>
             </div>
             <div class="col-md-12">
-              <label for="name" class="form-label">Descripcion de la categoria</label>
-              <input type="text" class="form-control" name="descripcion" required='true' autofocus>
+              <label for="name" class="form-label">RUC del Proveedor</label>
+              <input type="text" class="form-control" name="ruc" required='true' autofocus>
             </div>
+            <div class="col-md-12">
+              <label for="name" class="form-label">Razón social del Proveedor</label>
+              <input type="text" class="form-control" name="razonSocial" required='true' autofocus>
+            </div>
+            <div class="col-md-12">
+              <label for="name" class="form-label">Telefono del Proveedor</label>
+              <input type="text" class="form-control" name="telefono" required='true' autofocus>
+            </div>
+
           </div>
         </div>
         <div class="modal-footer">

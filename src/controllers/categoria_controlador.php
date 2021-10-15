@@ -18,7 +18,7 @@ class CategoriaControlador{
         
         Categoria::agregar($nombre, $descripcion);
         
-        header("location:../../views/categorias");
+        header("location:../../views/categorias/index.php");
     }
 
     public static function editar() {
@@ -28,7 +28,7 @@ class CategoriaControlador{
         $descripcion = $_REQUEST['descripcion'];
         
         Categoria::editar($idCategoria, $nombre, $descripcion);
-        header("location:../../views/categorias");
+        header("location:../../views/categorias/index.php");
     }
 
     public static function eliminar() {
@@ -37,7 +37,7 @@ class CategoriaControlador{
 
         Categoria::eliminar($idCategoria);
         
-        header("location:../../views/categorias");
+        header("location:../../views/categorias/index.php");
     }
 
 }

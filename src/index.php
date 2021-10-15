@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?php require('views/includes/head.php') ?>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./public/css/bootstrap.css">
 </head>
 <body>
     <div class="navbar border-bottom">

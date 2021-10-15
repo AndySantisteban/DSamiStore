@@ -8,7 +8,7 @@
   <title>Empleados</title>
   <?php include('../includes/head.php') ?>
   <link rel="stylesheet" href="../../public/css/index.css">
-
+    <?php include("../../controllers/validacion_sesion.php") ?>
 </head>
 
 <body>

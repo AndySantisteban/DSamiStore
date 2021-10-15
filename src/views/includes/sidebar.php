@@ -7,7 +7,7 @@
             <a href="../categorias" class="nav-link link-dark active">Categorías</a>
         </li>
         <li class='nav-item' >
-            <a href="#" class="nav-link link-dark ">Productos</a>
+            <a href="../productos" class="nav-link link-dark ">Productos</a>
         </li>
         <li>
             <a href="#" class="nav-link link-dark">Pedidos</a>

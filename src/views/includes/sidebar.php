@@ -13,13 +13,16 @@
             <a href="#" class="nav-link link-dark">Pedidos</a>
         </li>
         <li>
-            <a href="#" class="nav-link link-dark">Proveedores</a>
+            <a href="../proveedor" class="nav-link link-dark">Proveedores</a>
         </li>
         <li>
             <a href="../usuarios" class="nav-link link-dark">Usuarios</a>
         </li>
         <li>
             <a href="../roles" class="nav-link link-dark">Roles</a>
+        </li>
+        <li>
+            <a href="../empleados" class="nav-link link-dark">Empleados</a>
         </li>
     </div>
     

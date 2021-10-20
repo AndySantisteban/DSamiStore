@@ -26,7 +26,12 @@
                 </li>
                 <li class='nav-item'>
                     <a href='../roles' class='nav-link link-dark'>Roles</a>
-                </li>";
+                </li>
+                <li class='nav-item'>
+                    <a href='../empleados' class='nav-link link-dark'>Empleados</a>
+                </li>
+               ";
+
         }else {
             echo "";
         }

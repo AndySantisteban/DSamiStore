@@ -183,19 +183,19 @@ INSERT INTO producto VALUES (2, 2, 2, 2, 'Taza Dia de la madre', 'Esta es una ta
 INSERT INTO proveedor VALUES (1, 'Prosemedic', 'Xiantao Rayxin Medical Products', '956652369', '1665455239874');
 INSERT INTO proveedor VALUES (2, 'Limpieza', 'Productos de limpieza', '981489636', '4963325698114');
 
-INSERT INTO empleado VALUES (1, 'Larry', 'Chuzon', 'Benites', '986532569', '01/01/2000', 'En mi casita');
-INSERT INTO empleado VALUES (2, 'Denilson', 'Chuzon', 'Benites', '986532569', '01/01/2000', 'En mi casita');
-INSERT INTO empleado VALUES (3, 'Liliana', 'Villegas', 'Villanueva', '986532569', '01/01/2000', 'En mi casita');
+INSERT INTO empleado VALUES (1, 'Larry', 'Chuzon', 'Benites', '986532569', '2000-01-01', 'En mi casita');
+INSERT INTO empleado VALUES (2, 'Denilson', 'Chuzon', 'Benites', '986532569', '2000-01-01', 'En mi casita');
+INSERT INTO empleado VALUES (3, 'Liliana', 'Villegas', 'Villanueva', '986532569', '2000-01-01', 'En mi casita');
 
 INSERT INTO usuario VALUES (1, 1, 1, 'adm', 'adm', 'administrador', 'adm@adm.com');
 INSERT INTO usuario VALUES (2, 2, 2, 'Liliana', 'lili2021', 'vendedor', '@gmail.com');
 INSERT INTO usuario VALUES (3, 3, 2, 'Larry', 'larry2021', 'almacen', '@gmail.com');
 
-INSERT INTO cotizacion VALUES (1, 1, 1, '09-10-2021');
-INSERT INTO cotizacion VALUES (2, 2, 1, '10-10-2021');
+INSERT INTO cotizacion VALUES (1, 1, 1, '2021-09-10');
+INSERT INTO cotizacion VALUES (2, 2, 1, '2021-10-10');
 
-INSERT INTO detalle_compra VALUES (1, 1, 1, '10-10-2021', 50, 5.0, 250.0);
-INSERT INTO detalle_compra VALUES (2, 2, 2, '11-10-2021', 30, 7.5, 225.0);
+INSERT INTO detalle_compra VALUES (1, 1, 1, '2021-10-10', 50, 5.0, 250.0);
+INSERT INTO detalle_compra VALUES (2, 2, 2, '2021-11-10', 30, 7.5, 225.0);
 
 INSERT INTO rol_operaciones VALUES (1, 1, 1 );
 INSERT INTO rol_operaciones VALUES (2, 1, 2 );

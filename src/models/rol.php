@@ -1,6 +1,7 @@
 <?php 
 include("../../controllers/config.php");
-class Rol{
+
+class Rol {
     public $id;
     public $nombre;
 
@@ -15,23 +16,30 @@ class Rol{
         $consulta  = ("SELECT * FROM rol");
         $resultado = mysqli_query($link, $consulta);
         while ($valor = mysqli_fetch_assoc($resultado)){ 
-            $roles[]= new Rol($valor['idRol'], $valor['nombre']);
+            $roles[] = new Rol($valor['idRol'], $valor['nombre']);
         }
         return $roles;
     } 
-    
-
 
     public static function agregar($nombre){
         global $link; 
-        $consulta = ("INSERT INTO rol(nombre) VALUES ('" . $nombre . "')");
+        $consulta = ("INSERT INTO rol(
+            nombre
+        )
+        VALUES (
+            '" . $nombre . "'
+        )");
         $resultado = mysqli_query($link, $consulta);
         return $resultado;
     }
 
     public static function editar($id, $nombre) {
         global $link; 
-        $consulta = ("UPDATE rol SET nombre  ='" . $nombre . "' WHERE idRol='" . $id . "'");
+        $consulta = ("UPDATE rol
+            SET
+            nombre      = '" . $nombre . "'
+            WHERE idRol = '" . $id . "'
+        ");
         $resultado = mysqli_query($link, $consulta);
         return $resultado;
     }
@@ -43,6 +51,4 @@ class Rol{
         return $resultado;
     }
 }
-
-
 ?>

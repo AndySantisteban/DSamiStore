@@ -3,69 +3,61 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Editar Empleado</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Editar empleado</h5>
         <button type="button" class="btn-close p-2" data-bs-dismiss="modal" aria-label="Close">
         </button>
       </div>
 
       <form method="POST" action="../../controllers/empleados/editar.php">
-        <input type="hidden" name="idEmpleado" value="<?php echo $empleado->id; ?>">
         <div class="modal-body" id="cont_modal">
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Nombres</label>
-            <input type="text" name="nombre" class="form-control" value="<?php echo $empleado->nombre; ?>" required="true">
-          </div>
+          <input type="hidden" name="idEmpleado" value="<?php echo $empleado->id; ?>">
+  
+          <div class="row d-grid gap-3">
+            <div class="col-md-12">
+              <label for="editar-nombre" class="col-form-label">Nombre</label>
+              <input type="text" id="editar-nombre" name="nombre" class="form-control" value="<?php echo $empleado->nombre; ?>" placeholder="Agregar nombre" required autofocus>
+            </div>
 
-          <div class="row ">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Apellido Materno</label>
-                <input type="text" name="apellidoMaterno" class="form-control" value="<?php echo $empleado->apellidoMaterno; ?>" required="true">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="editar-apellidoPaterno" class="col-form-label">Apellido paterno</label>
+                  <input type="text" id="editar-apellidoPaterno" name="apellidoPaterno" class="form-control" value="<?php echo $empleado->apellidoPaterno; ?>" placeholder="Agregar apellido paterno" required="true">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="editar-apellidoMaterno" class="col-form-label">Apellido materno</label>
+                  <input type="text" class="form-control" id="editar-apellidoMaterno" name="apellidoMaterno" value="<?php echo $empleado->apellidoMaterno; ?>" placeholder="Agregar apellido materno" required>
+                </div>
               </div>
             </div>
 
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Apellido Paterno</label>
-                <input type="text" name="apellidoPaterno" class="form-control" value="<?php echo $empleado->apellidoPaterno; ?>" required="true">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="editar-telefono" class="col-form-label">Telefono</label>
+                <input type="text" class="form-control" id="editar-telefono" name="telefono" value="<?php echo $empleado->telefono; ?>" required>
               </div>
-            </div>
-          </div>
 
-          <div class="row ">
-            <div class="col-md-6">
-                <label for="recipient-name" class="col-form-label">Usuario</label>
-                <select name="idUsuario" class="form-select form-select-sm" aria-label=".form-select-sm example" ">
-                  <?php
-                    foreach ($users as $user) {
-                      $selected = $user->id == $empleado->user->id ? "selected" : "";
-                          echo "<option " . $selected ." value=" . $user->id  . ">" .$user->nombre  . "</option>";
-                            }
-                  ?>
-                </select>
-            </div>
-
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Telefono</label>
-                <input type="text" name="telefono" class="form-control" value="<?php echo $empleado->telefono; ?>" required="true">
+              <div class="col-md-6">
+                <label for="editar-fechaNac" class="form-label">Fecha nacimiento</label>
+                <input type="text" class="form-control" id="editar-fechaNac" name="fechaNac" placeholder="Agregar fecha de nacimiento" required>
               </div>
             </div>
 
+            <div class="col-md-12">
+              <label for="editar-direccion" class="col-form-label">Dirección</label>
+              <input type="text" class="form-control" id="editar-direccion" name="direccion" value="<?php echo $empleado->direccion; ?>" placeholder="Agregar dirección" required>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Direccion</label>
-            <input type="text" name="direccion" class="form-control" value="<?php echo $empleado->direccion; ?>" required="true">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
           </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Aceptar</button>
         </div>
       </form>
-
     </div>
   </div>
 </div>

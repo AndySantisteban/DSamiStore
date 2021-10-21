@@ -1,5 +1,5 @@
 <?php
-    include("../../controllers/empleado_controlador.php");
+include("../../controllers/empleado_controlador.php");
 
-    EmpleadoControlador::listar();
+EmpleadoControlador::listar();
 ?>

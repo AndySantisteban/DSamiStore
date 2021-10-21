@@ -11,21 +11,22 @@
       <form method="POST" action="../../controllers/categorias/editar.php">
         <input type="hidden" name="idCategoria" value="<?php echo $categoria->id; ?>">
         <div class="modal-body" id="cont_modal">
-          <div class="form-group mb-3">
-            <label for="recipient-name" class="col-form-label">Nombre</label>
-            <input type="text" name="nombre" placeholder="Nombre" class="form-control" value="<?php echo $categoria->nombre; ?>" required="true">
+          <div class="mb-3">
+            <label for="editar-nombre" class="col-form-label">Nombre</label>
+            <input type="text" class="form-control" id="editar-nombre" name="nombre" placeholder="Agregar nombre" value="<?php echo $categoria->nombre; ?>" required="true">
           </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Descripcion</label>
-            <input type="text" name="descripcion" placeholder="Descripción" class="form-control" value="<?php echo $categoria->descripcion; ?>" placeholder=""required="true">
+
+          <div>
+            <label for="editar-descripcion" class="col-form-label">Descripción</label>
+            <input type="text" class="form-control" id="editar-descripcion" name="descripcion" placeholder="Agregar descripción" value="<?php echo $categoria->descripcion; ?>" placeholder=""required="true">
           </div>
         </div>
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn btn-primary">Aceptar</button>
         </div>
       </form>
-
     </div>
   </div>
 </div>

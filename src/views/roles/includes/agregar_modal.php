@@ -4,23 +4,21 @@
     <div class="modal-content">
       <form name="form-data" action="../../controllers/roles/agregar.php" method="POST">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Agregar Rol</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Agregar rol</h5>
           <button type="button" class="btn-close p-2" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
+        
         <div class="modal-body">
-          <div class="row">
-            <div class="col-md-12">
-              <label for="name" class="form-label">Nombre del Rol</label>
-              <input type="text" class="form-control" name="nombre" required='true' autofocus>
-            </div>
+          <div>
+            <label for="agregar-nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="agregar-nombre" name="nombre" placeholder="Agregar nombre" required autofocus>
           </div>
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button class="btn btn-primary btn-block" id="btnEnviar">
-            Aceptar
-          </button>
+          <button type="submit" class="btn btn-primary" id="btnEnviar">Aceptar</button>
         </div>
       </form>
     </div>

@@ -33,10 +33,9 @@ class Empleado {
         return $empleados;
     } 
 
-    public static function agregar($idUser, $nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaNac , $direccion){
+    public static function agregar($nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaNac , $direccion){
         global $link; 
         $consulta = ("INSERT INTO empleado(
-            idUsuario,
             nombre,
             apellidoMaterno,
             apellidoPaterno ,
@@ -45,7 +44,6 @@ class Empleado {
             direccion
         ) 
         VALUES (
-            '" . $idUser . "',
             '" . $nombre . "' ,
             '" . $apellidoMaterno . "',
             '" . $apellidoPaterno . "',
@@ -53,18 +51,21 @@ class Empleado {
             '" . $fechaNac . "',
             '" . $direccion . "'
         )");
+        print_r($consulta);
         $resultado = mysqli_query($link, $consulta);
         return $resultado;
     }
 
-    public static function editar($id , $idUser, $nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaNac , $direccion) {
+    public static function editar($id ,  $nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaNac , $direccion) {
         global $link; 
         $consulta = ("UPDATE empleado
             SET
-            idUsuario        = '" . $idUser . "',
             nombre           = '" . $nombre . "',
             apellidoMaterno  = '" . $apellidoMaterno . "',
-            apellidoPaterno  = '" . $apellidoPaterno . "', telefono  ='" . $telefono . "' , fechaNac  ='" . $fechaNac . "', direccion  ='" . $direccion . "'
+            apellidoPaterno  = '" . $apellidoPaterno . "',
+            telefono         = '" . $telefono . "' ,
+            fechaNac         = '" . $fechaNac . "',
+            direccion        = '" . $direccion . "'
             WHERE idEmpleado = '" . $id . "'
         ");
         $resultado = mysqli_query($link, $consulta);

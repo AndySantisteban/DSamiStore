@@ -42,7 +42,7 @@
 
               <div class="col-md-6">
                 <label for="editar-fechaNac" class="form-label">Fecha nacimiento</label>
-                <input type="text" class="form-control" id="editar-fechaNac" name="fechaNac" placeholder="Agregar fecha de nacimiento" required>
+                <input type="text" class="form-control" id="editar-fechaNac" name="fechaNac" value="<?php echo $empleado->fechaNac; ?>" placeholder="Agregar fecha de nacimiento" required>
               </div>
             </div>
 

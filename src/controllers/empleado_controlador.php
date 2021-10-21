@@ -13,7 +13,6 @@ class EmpleadoControlador {
     }
 
     public static function agregar() {
-        $idUsuario       = $_REQUEST['idUsuario'];
         $nombre          = $_REQUEST['nombre'];
         $apellidoMaterno = $_REQUEST['apellidoMaterno'];
         $apellidoPaterno = $_REQUEST['apellidoPaterno'];
@@ -21,14 +20,13 @@ class EmpleadoControlador {
         $fechaNac        = $_REQUEST['fechaNac'];
         $direccion       = $_REQUEST['direccion'];
         
-        Empleado::agregar($idUsuario , $nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaNac , $direccion );
+        Empleado::agregar($nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaNac , $direccion );
         
         header("location:../../views/empleados");
     }
 
     public static function editar() {
         $id              = $_REQUEST['idEmpleado'];
-        $idUsuario       = $_REQUEST['idUsuario'];
         $nombre          = $_REQUEST['nombre'];
         $apellidoMaterno = $_REQUEST['apellidoMaterno'];
         $apellidoPaterno = $_REQUEST['apellidoPaterno'];
@@ -36,7 +34,7 @@ class EmpleadoControlador {
         $fechaNac        = $_REQUEST['fechaNac'];
         $direccion       = $_REQUEST['direccion'];
         
-        Empleado::editar($id, $idUsuario , $nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaN , $direccion );
+        Empleado::editar($id, $nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaN , $direccion );
 
         header("location:../../views/empleados");
     }

@@ -11,18 +11,17 @@
       <form method="POST" action="../../controllers/roles/editar.php">
         <input type="hidden" name="idRol" value="<?php echo $rol->id; ?>">
         <div class="modal-body" id="cont_modal">
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Nombre del Rol</label>
-            <input type="text" name="nombre" class="form-control" value="<?php echo $rol->nombre; ?>" required="true">
+          <div>
+            <label for="editar-nombre" class="col-form-label">Nombre</label>
+            <input type="text" class="form-control" id="editar-nombre" name="nombre" value="<?php echo $rol->nombre; ?>" placeholder="Agregar nombre" required autofocus>
           </div>
         </div>
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn btn-primary">Aceptar</button>
         </div>
       </form>
-
     </div>
   </div>
 </div>
-<!---fin ventana Update --->

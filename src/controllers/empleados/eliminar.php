@@ -1,5 +1,5 @@
 <?php
-    include("../empleado_controlador.php");
+include("../empleado_controlador.php");
 
-    EmpleadoControlador::eliminar();
+EmpleadoControlador::eliminar();
 ?>

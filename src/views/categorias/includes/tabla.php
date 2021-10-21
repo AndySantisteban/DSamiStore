@@ -3,7 +3,6 @@
         <table class="table table-borderless">
             <thead>
                 <tr>
-                    <!--fbdbsfb  -->
                     <th scope="col">Codigo</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Descripción</th>
@@ -12,7 +11,6 @@
             </thead>
             <tbody>
                 <?php
-                    $categorias = Categoria::listar();
                     foreach ($categorias as $categoria) { ?>
                     <tr>
                         <td><?php echo $categoria->id; ?></td>
@@ -25,13 +23,13 @@
                                 </button>
                                 <!--Ventana Modal para Actualizar--->
                                 <?php include("../../views/categorias/includes/editar_modal.php") ?>
+                                
                                 <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#eliminarCat<?php echo $categoria->id; ?>">Eliminar</button>
                                 <!--Ventana Modal para la Alerta de Eliminar--->
                                 <?php include("../../views/categorias/includes/eliminar_modal.php") ?>
                             </div>
                         </td>
                     </tr>
-
                 <?php } ?>
             </tbody>
         </table>

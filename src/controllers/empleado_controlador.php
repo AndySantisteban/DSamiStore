@@ -34,7 +34,7 @@ class EmpleadoControlador {
         $fechaNac        = $_REQUEST['fechaNac'];
         $direccion       = $_REQUEST['direccion'];
         
-        Empleado::editar($id, $nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaN , $direccion );
+        Empleado::editar($id, $nombre, $apellidoMaterno , $apellidoPaterno , $telefono, $fechaNac , $direccion );
 
         header("location:../../views/empleados");
     }
@@ -46,6 +46,5 @@ class EmpleadoControlador {
         
         header("location:../../views/empleados");
     }
-
 }
 ?>

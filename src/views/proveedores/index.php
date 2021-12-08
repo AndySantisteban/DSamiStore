@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <?php include("./includes/newemail.php") ?>
+                <?php include("./includes/enviar_correo.php") ?>
                 <?php include("./includes/agregarModal.php") ?>
                 <?php include("../../controllers/proveedor/listar.php"); ?>
 
@@ -50,7 +50,8 @@
                     data-bs-target="#newemail"
                     data-bs-placement="top"
                     title="Nuevo pedido"
-            ><img src="https://img.icons8.com/metro/20/000000/paper-plane.png" alt="..."/>
+            >
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.5rem" width="1.5rem" xmlns="http://www.w3.org/2000/svg"><path fill="transparent" stroke="currentColor" stroke-width="2" d="M22,3 L2,11 L20.5,19 L22,3 Z M10,20.5 L13,16 M15.5,9.5 L9,14 L9.85884537,20.0119176 C9.93680292,20.5576204 10.0751625,20.5490248 10.1651297,20.009222 L11,15 L15.5,9.5 Z"></path></svg>
             </button>
         </div>
     </div>

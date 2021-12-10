@@ -45,7 +45,6 @@
 
         <?php
         if($_SESSION['username'] === "administrador"){
-            print $_SESSION['idRol'];
             $req = $_SERVER["REQUEST_URI"];
             if($req==='/DSamiStore/src/views/proveedores/'){
                 $res= "active";
@@ -61,7 +60,6 @@
         ?>
         <?php
         if($_SESSION['username'] === "administrador"){
-            print $_SESSION['idRol'];
             $req = $_SERVER["REQUEST_URI"];
             if($req==='/DSamiStore/src/views/usuarios/'){
                 $res= "active";
@@ -77,7 +75,6 @@
         ?>
         <?php
         if($_SESSION['username'] === "administrador"){
-            print $_SESSION['idRol'];
             $req = $_SERVER["REQUEST_URI"];
             if($req==='/DSamiStore/src/views/roles/'){
                 $res= "active";
@@ -93,7 +90,6 @@
         ?>
         <?php
         if($_SESSION['username'] === "administrador"){
-            print $_SESSION['idRol'];
             $req = $_SERVER["REQUEST_URI"];
             if($req==='/DSamiStore/src/views/empleados/'){
                 $res= "active";

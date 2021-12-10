@@ -1,3 +1,4 @@
+<?php include("../../controllers/validacion_sesion.php") ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +9,6 @@
     <?php include('../includes/head.php') ?>
     <link rel="stylesheet" href="../../public/css/index.css">
     <link rel="stylesheet" href="../../public/css/bootstrap.css">
-    <?php include("../../controllers/validacion_sesion.php") ?>
 </head>
 <body>
 <div class="app">

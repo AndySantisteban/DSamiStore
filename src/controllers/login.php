@@ -4,7 +4,6 @@
 
     $username =$_POST['username'];
     $password = $_POST['password'];
-    $idRol = $_POST['idRol'];
     $q = "SELECT COUNT(*) as todos from usuario where userName = '$username' and  password = '$password'";
 
     $consulta = mysqli_query($link,$q);
@@ -12,7 +11,6 @@
 
     if ($array['todos']>0){
         $_SESSION['username']= $username;
-        $_SESSION['idRol']= $idRol;
 
         header("location: ../views/categorias");
 

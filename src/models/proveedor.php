@@ -19,7 +19,7 @@
     public static function listar() {
         global $link;
         $proveedores = [];
-        $consulta  = ("SELECT * FROM Proveedor");
+        $consulta  = ("SELECT * FROM proveedor");
         $resultado = mysqli_query($link, $consulta);
         while ($valor = mysqli_fetch_assoc($resultado)){ 
             $proveedores[]= new Proveedor($valor['idProveedor'], $valor['nombre'], $valor['ruc'], $valor['razonSocial'], $valor['telefono']);
@@ -29,7 +29,7 @@
     
     public static function agregar($nombre, $ruc, $razonSocial, $telefono){
         global $link; 
-        $consulta = ("INSERT INTO Proveedor(
+        $consulta = ("INSERT INTO proveedor(
           nombre,
           razonSocial,
           telefono,
@@ -47,7 +47,7 @@
 
     public static function editar($id, $nombre, $ruc, $razonSocial, $telefono) {
         global $link; 
-        $consulta = ("UPDATE Proveedor 
+        $consulta = ("UPDATE proveedor 
         SET 
         nombre            ='" .$nombre. "',
         ruc               ='" .$ruc. "',
@@ -61,7 +61,7 @@
     
     public static function eliminar($id) {
         global $link; 
-        $consulta = ("DELETE FROM Proveedor WHERE idProveedor= '".$id . "' ");
+        $consulta = ("DELETE FROM proveedor WHERE idProveedor= '".$id . "' ");
         $resultado = mysqli_query($link, $consulta);
         return $resultado;
     }

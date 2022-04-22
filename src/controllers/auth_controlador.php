@@ -11,13 +11,14 @@ class AuthControlador {
 
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-            $username = $_SESSION['username'];
-    
-            if ($username) {
-                header("location:../../controllers/categorias");
-            } else {
+            if (!isset($_SESSION['username'])) {
                 include("../../views/login/index.php");
+            } else {
+                $username = $_SESSION['username'];
+                header("location:../../controllers/categorias");
+
             }
+      
         } else {
             $username = $_POST['username'];
             $password = $_POST['password'];

@@ -1,4 +1,3 @@
-<?php include("../../controllers/auth/redirect_home.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

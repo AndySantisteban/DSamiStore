@@ -1,13 +1,11 @@
-<?php include("../../controllers/validacion_sesion.php") ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proveedores</title>
-    <?php include('../includes/head.php') ?>
+    <?php include('../../views/includes/head.php') ?>
     <link rel="stylesheet" href="../../public/css/index.css">
     <link rel="stylesheet" href="../../public/css/bootstrap.css">
 </head>
@@ -15,9 +13,9 @@
 <body>
 
     <div class="app position-relative">
-        <?php include('../includes/sidebar.php') ?>
+        <?php include('../../views/includes/sidebar.php') ?>
         <div class="app-content">
-            <?php include('../includes/navbar.php') ?>
+            <?php include('../../views/includes/navbar.php') ?>
             <div class="container px-4 ">
                 <div class="py-4 bd-highlight row">
                     <div class="title-proveedores py-2">
@@ -39,9 +37,9 @@
                         </div>
                     </div>
                 </div>
-                <?php include("./includes/enviar_correo.php") ?>
-                <?php include("./includes/agregarModal.php") ?>
-                <?php include("../../controllers/proveedor/listar.php"); ?>
+                <?php include("../../views/proveedores/includes/enviar_correo.php") ?>
+                <?php include("../../views/proveedores/includes/agregar_modal.php") ?>
+                <?php include("../../views/proveedores/includes/tabla.php"); ?>
 
             </div>
 

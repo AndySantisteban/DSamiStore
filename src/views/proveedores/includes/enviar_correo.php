@@ -1,7 +1,7 @@
 <div class="modal fade" id="newemail" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="POST" action="../../controllers/proveedor/enviar-correo.php">
+            <form method="POST" action="../../controllers/proveedores/enviar-correo.php">
                 <div class="modal-header">
                     <h4 class="modal-title" id="myModalLabel">Contacto con proveedor</h4>
                 </div>

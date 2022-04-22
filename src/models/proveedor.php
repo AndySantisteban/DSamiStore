@@ -1,5 +1,5 @@
 <?php 
-  include("../../controllers/config.php");
+include("../../config/database.php");
   
   class Proveedor{
       public $id;
@@ -30,17 +30,17 @@
     public static function agregar($nombre, $ruc, $razonSocial, $telefono){
         global $link; 
         $consulta = ("INSERT INTO proveedor(
-          nombre,
-          razonSocial,
-          telefono,
-          ruc
-      )
-      VALUES (
-          '".$nombre. "',
-          '".$razonSocial. "',
-          '".$telefono. "',
-          '".$ruc. "'
-      )");
+            nombre,
+            razonSocial,
+            telefono,
+            ruc
+        )
+        VALUES (
+            '".$nombre. "',
+            '".$razonSocial. "',
+            '".$telefono. "',
+            '".$ruc. "'
+        )");
         $resultado = mysqli_query($link, $consulta);
         return $resultado;
     }

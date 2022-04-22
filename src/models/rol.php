@@ -1,5 +1,5 @@
 <?php 
-include("../../controllers/config.php");
+include("../../config/database.php");
 
 class Rol {
     public $id;

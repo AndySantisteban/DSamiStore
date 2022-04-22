@@ -35,12 +35,12 @@
 
           <div class="mb-3">
             <label for="editar-precio" class="col-form-label">Precio</label>
-            <input type="is_double" class="form-control" id="editar-precio" name="precio" value="<?php echo $producto->precio; ?>" required>
+            <input type="number" class="form-control" id="editar-precio" name="precio" value="<?php echo $producto->precio; ?>" required>
           </div>
 
           <div>
             <label for="editar-estado" class="col-form-label">Estado</label>
-            <input type="is_double" class="form-control" id="editar-estado" name="estado" value="<?php echo $producto->estado; ?>" required>
+            <input type="number" class="form-control" id="editar-estado" name="estado" value="<?php echo $producto->estado; ?>" required>
           </div>
         </div>
         <div class="modal-footer">

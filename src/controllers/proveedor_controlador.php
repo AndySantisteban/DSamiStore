@@ -1,28 +1,33 @@
 <?php
-
-require __DIR__ . '../../../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-include("../../controllers/config.php");
+include("../../models/usuario.php");
 include("../../models/rol.php");
 include("../../models/empleado.php");
 include("../../models/proveedor.php");
-include("../../models/usuario.php");
+
+require __DIR__ . '../../../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
+$dotenv->load();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-
 class ProveedorControlador{
 
     public static function listar() {
+        session_start();
 
-        $categorias = Proveedor::listar();
+        $username = $_SESSION['username'];
 
-        include("../../views/proveedores/includes/tabla.php");
+        if (!$username) {
+            header("location:../../controllers/login");
+        } else {
+            $usuario = Usuario::encontrar($username); 
+            $proveedores = Proveedor::listar(); 
+
+            include("../../views/proveedores/index.php");
+        }
     }
 
     public static function agregar() {
@@ -33,7 +38,7 @@ class ProveedorControlador{
         
         Proveedor::agregar($nombre, $ruc, $razonSocial, $telefono);
         
-        header("location:../../views/proveedores/index.php");
+        header("location:../../controllers/proveedores");
     }
 
     public static function editar() {
@@ -45,7 +50,8 @@ class ProveedorControlador{
         $telefono 	    = $_REQUEST['telefono'];
         
         Proveedor::editar($idProveedor, $nombre, $ruc, $razonSocial, $telefono);
-        header("location:../../views/proveedores/index.php");
+        
+        header("location:../../controllers/proveedores");
     }
 
     public static function eliminar() {
@@ -54,7 +60,7 @@ class ProveedorControlador{
 
         Proveedor::eliminar($idProveedor);
         
-        header("location:../../views/proveedores/index.php");
+        header("location:../../controllers/proveedores");
     }
 
 
@@ -88,9 +94,9 @@ class ProveedorControlador{
             $mail->AltBody = 'Nuevo Mensaje de pedido DSamiStore';
         
             $mail->send();
-            header("location:../../views/proveedores/index.php");
+            header("location:../../controllers/proveedores");
         } catch (Exception $e) {
-            header("location:../../views/proveedores/index.php");
+            header("location:../../controllers/proveedores");
         }
     }
 

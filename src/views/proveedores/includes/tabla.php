@@ -3,7 +3,6 @@
         <table class="table table-borderless">
             <thead>
                 <tr>
-                    <!--fbdbsfb  -->
                     <th scope="col">Codigo</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">RUC</th>
@@ -14,7 +13,6 @@
             </thead>
             <tbody>
                 <?php
-                    $proveedores = Proveedor::listar();
                     foreach ($proveedores as $proveedor) { ?>
                     <tr>
                         <td><?php echo $proveedor->id; ?></td>
@@ -28,10 +26,10 @@
                                     Editar
                                 </button>
                                 <!--Ventana Modal para Actualizar--->
-                                <?php include("../../views/proveedores/includes/editarModal.php") ?>
+                                <?php include("../../views/proveedores/includes/editar_modal.php") ?>
                                 <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#eliminar<?php echo $proveedor->id; ?>">Eliminar</button>
                                 <!--Ventana Modal para la Alerta de Eliminar--->
-                                <?php include("../../views/proveedores/includes/eliminarModal.php") ?>
+                                <?php include("../../views/proveedores/includes/eliminar_modal.php") ?>
                             </div>
                         </td>
                     </tr>

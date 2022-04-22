@@ -1,16 +1,27 @@
 <?php
 
-include("../../controllers/config.php");
-include("../../models/producto.php");
+include("../../models/usuario.php");
+include("../../models/rol.php");
+include("../../models/empleado.php");
 include("../../models/categoria.php");
+include("../../models/producto.php");
 
 class ProductoControlador {
 
     public static function listar() {
-        $productos = Producto::listar(); 
-        $categorias = Categoria::listar();
-        
-        include("../../views/productos/includes/tabla.php");
+        session_start();
+
+        $username = $_SESSION['username'];
+
+        if (!$username) {
+            header("location:../../controllers/login");
+        } else {
+            $usuario = Usuario::encontrar($username); 
+            $categorias = Categoria::listar(); 
+            $productos = Producto::listar(); 
+
+            include("../../views/productos/index.php");
+        }
     }
 
     public static function agregar() {
@@ -19,7 +30,7 @@ class ProductoControlador {
         $descripcion = $_REQUEST['descripcion'];
         $precio      = $_REQUEST['precio'];
         $estado      = $_REQUEST['estado'];
-        
+
         Producto::agregar(
             $nombre,
             $idCategoria,
@@ -30,7 +41,7 @@ class ProductoControlador {
             $estado
         );
 
-        header("location:../../views/productos");
+        header("location:../../controllers/productos");
     }
 
     public static function editar() {
@@ -52,7 +63,7 @@ class ProductoControlador {
             $estado
         );
 
-        header("location:../../views/productos");
+        header("location:../../controllers/productos");
     }
 
     public static function eliminar() {
@@ -60,7 +71,7 @@ class ProductoControlador {
 
         Producto::eliminar($idProducto);
         
-        header("location:../../views/productos");
+        header("location:../../controllers/productos");
     }
 }
 ?>

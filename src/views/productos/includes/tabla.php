@@ -1,14 +1,8 @@
-<?php 
-
-        include("./includes/agregar_modal.php"); ?>
-
-
 <div  class="card">
   <div class="table-responsive">
   <table class="table table-borderless ">
   <thead>
     <tr>
-      <!--fbdbsfb  -->
       <th scope="col">Codigo</th>
       <th scope="col">Categoria</th>
        <th scope="col">Imagen</th>

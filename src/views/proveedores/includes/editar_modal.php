@@ -8,7 +8,7 @@
         </button>
       </div>
 
-      <form method="POST" action="../../controllers/proveedor/editar.php">
+      <form method="POST" action="../../controllers/proveedores/editar.php">
         <input type="hidden" name="idProveedor" value="<?php echo $proveedor->id; ?>">
         <div class="modal-body" id="cont_modal">
           <div class="form-group">

@@ -33,12 +33,12 @@
 
           <div class="mb-3">
             <label for="agregar-precio" class="col-form-label">Precio</label>
-            <input class="form-control" id="agregar-precio" name="precio" placeholder="Agregar precio" required></input>
+            <input type="number" class="form-control" id="agregar-precio" name="precio" placeholder="Agregar precio" required></input>
           </div>
 
           <div class="mb-3">
             <label for="agregar-estado" class="col-form-label">Estado</label>
-            <input class="form-control" id="agregar-estado" name="estado" placeholder="Agregar estado" required></input>
+            <input type="number" class="form-control" id="agregar-estado" name="estado" placeholder="Agregar estado" required></input>
           </div>
         </div>
 

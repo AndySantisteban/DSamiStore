@@ -1,18 +1,26 @@
 <?php
 
-include("../../controllers/config.php");
-include("../../models/empleado.php");
 include("../../models/usuario.php");
 include("../../models/rol.php");
+include("../../models/empleado.php");
 
 class UsuarioControlador {
 
     public static function listar() {
-        $usuarios = Usuario::listar(); 
-        $roles = Rol::listar();
-        $empleados = Empleado::listar();
+        session_start();
 
-        include("../../views/usuarios/includes/listar_vista.php");
+        $username = $_SESSION['username'];
+
+        if (!$username) {
+            header("location:../../controllers/login");
+        } else {
+            $usuario = Usuario::encontrar($username); 
+            $usuarios = Usuario::listar(); 
+            $roles = Rol::listar(); 
+            $empleados = Empleado::listar(); 
+
+            include("../../views/usuarios/index.php");
+        }
     }
 
     public static function agregar() {
@@ -25,7 +33,7 @@ class UsuarioControlador {
 
         Usuario::agregar($nombre, $password , $username , $email, $idRol, $idEmpleado);
         
-        header("location:../../views/usuarios");
+        header("location:../../controllers/usuarios");
     }
 
     public static function editar() {
@@ -39,7 +47,7 @@ class UsuarioControlador {
 
         Usuario::editar($id, $nombre, $password , $username , $email, $idRol , $idEmpleado);
 
-        header("location:../../views/usuarios");
+        header("location:../../controllers/usuarios");
     }
 
     public static function eliminar() {
@@ -47,7 +55,7 @@ class UsuarioControlador {
 
         Usuario::eliminar($id);
         
-        header("location:../../views/usuarios");
+        header("location:../../controllers/usuarios");
     }
 }
 ?>

@@ -1,14 +1,24 @@
 <?php
 
-include("../../controllers/config.php");
+include("../../models/usuario.php");
 include("../../models/rol.php");
+include("../../models/empleado.php");
 
 class RolControlador {
 
     public static function listar() {
-        $roles = Rol::listar(); 
+        session_start();
 
-        include("../../views/roles/includes/tabla.php");
+        $username = $_SESSION['username'];
+
+        if (!$username) {
+            header("location:../../controllers/login");
+        } else {
+            $usuario = Usuario::encontrar($username); 
+            $roles = Rol::listar(); 
+
+            include("../../views/roles/index.php");
+        }
     }
 
     public static function agregar() {
@@ -16,7 +26,7 @@ class RolControlador {
 
         Rol::agregar($nombre);
 
-        header("location:../../views/roles");
+        header("location:../../controllers/roles");
     }
 
     public static function editar() {
@@ -25,7 +35,7 @@ class RolControlador {
 
         Rol::editar($idRol, $nombre);
 
-        header("location:../../views/roles");
+        header("location:../../controllers/roles");
     }
 
     public static function eliminar() {
@@ -33,7 +43,7 @@ class RolControlador {
 
         Rol::eliminar($idRol);
         
-        header("location:../../views/roles");
+        header("location:../../controllers/roles");
     }
 }
 ?>

@@ -1,14 +1,25 @@
 <?php
 
-include("../../controllers/config.php");
+include("../../models/usuario.php");
+include("../../models/rol.php");
+include("../../models/empleado.php");
 include("../../models/categoria.php");
 
-class CategoriaControlador{
+class CategoriaControlador {
 
     public static function listar() {
-        $categorias = Categoria::listar(); 
+        session_start();
 
-        include("../../views/categorias/includes/tabla.php");
+        $username = $_SESSION['username'];
+
+        if (!$username) {
+            header("location:../../controllers/login");
+        } else {
+            $usuario = Usuario::encontrar($username); 
+            $categorias = Categoria::listar(); 
+
+            include("../../views/categorias/index.php");
+        }
     }
 
     public static function agregar() {
@@ -17,7 +28,7 @@ class CategoriaControlador{
         
         Categoria::agregar($nombre, $descripcion);
         
-        header("location:../../views/categorias/index.php");
+        header("location:../../controllers/categorias");
     }
 
     public static function editar() {
@@ -26,7 +37,8 @@ class CategoriaControlador{
         $descripcion = $_REQUEST['descripcion'];
         
         Categoria::editar($idCategoria, $nombre, $descripcion);
-        header("location:../../views/categorias/index.php");
+
+        header("location:../../controllers/categorias");
     }
 
     public static function eliminar() {
@@ -34,7 +46,7 @@ class CategoriaControlador{
 
         Categoria::eliminar($idCategoria);
         
-        header("location:../../views/categorias/index.php");
+        header("location:../../controllers/categorias");
     }
 }
 ?>

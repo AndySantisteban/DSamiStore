@@ -10,24 +10,28 @@
 
       <form method="POST" action="../../controllers/proveedores/editar.php">
         <input type="hidden" name="idProveedor" value="<?php echo $proveedor->id; ?>">
-        <div class="modal-body" id="cont_modal">
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Nombre del proveedor:</label>
-            <input type="text" name="nombre" class="form-control" value="<?php echo $proveedor->nombre; ?>" required="true">
+        <div class="modal-body">
+        <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" value="<?php echo $proveedor->nombre; ?>" required>
           </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">RUC del Proveedor:</label>
-            <input type="text" name="ruc" class="form-control" value="<?php echo $proveedor->ruc; ?>" required="true">
+
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">RUC</label>
+            <input type="text" name="ruc" class="form-control" value="<?php echo $proveedor->ruc; ?>" required>
           </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Razón social del Proveedor:</label>
-            <input type="text" name="razonSocial" class="form-control" value="<?php echo $proveedor->razonSocial; ?>" required="true">
+
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Razón social</label>
+            <input type="text" name="razonSocial" class="form-control" value="<?php echo $proveedor->razonSocial; ?>" required>
           </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Telefono  del Proveedor:</label>
-            <input type="text" name="telefono" class="form-control" value="<?php echo $proveedor->telefono; ?>" required="true">
+
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Teléfono</label>
+            <input type="number" name="telefono" class="form-control" value="<?php echo $proveedor->telefono; ?>" required>
           </div>
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn btn-primary">Aceptar</button>

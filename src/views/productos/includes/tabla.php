@@ -5,8 +5,6 @@
     <tr>
       <th scope="col">Codigo</th>
       <th scope="col">Categoria</th>
-       <th scope="col">Imagen</th>
-      <th scope="col">Almacen</th> 
       <th scope="col">Nombre</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Precio</th>
@@ -21,12 +19,10 @@
     <tr>
       <td><?php echo $producto->id; ?></td>
       <td><?php echo $producto->categoria->nombre; ?></td>
-      <td><?php echo $producto->imagen; ?></td>
-      <td><?php echo $producto->almacen; ?></td>
       <td><?php echo $producto->nombre; ?></td>
       <td><?php echo $producto->descripcion; ?></td>
       <td><?php echo $producto->precio; ?></td>
-      <td><?php echo $producto->estado; ?></td>
+      <td><?php echo $producto->estado ? 'Disponible' : 'No disponible'; ?></td>
 
       
       <td>

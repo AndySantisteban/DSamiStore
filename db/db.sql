@@ -96,8 +96,8 @@ CREATE TABLE IF NOT EXISTS empleado(
     apellidoMaterno VARCHAR(15),
     apellidoPaterno VARCHAR(15),
 	telefono VARCHAR(15),
-    fechaNac DATETIME,
-    direccion VARCHAR(40),    
+    fechaNac DATE,
+    direccion VARCHAR(45),    
 	CONSTRAINT pk_empleado PRIMARY KEY (idEmpleado)
 );
 
@@ -183,13 +183,13 @@ INSERT INTO producto VALUES (2, 2, 2, 2, 'Taza Dia de la madre', 'Esta es una ta
 INSERT INTO proveedor VALUES (1, 'Prosemedic', 'Xiantao Rayxin Medical Products', '956652369', '1665455239874');
 INSERT INTO proveedor VALUES (2, 'Limpieza', 'Productos de limpieza', '981489636', '4963325698114');
 
-INSERT INTO empleado VALUES (1, 'Larry', 'Chuzon', 'Benites', '986532569', '2000-01-01', 'En mi casita');
-INSERT INTO empleado VALUES (2, 'Denilson', 'Chuzon', 'Benites', '986532569', '2000-01-01', 'En mi casita');
-INSERT INTO empleado VALUES (3, 'Liliana', 'Villegas', 'Villanueva', '986532569', '2000-01-01', 'En mi casita');
+INSERT INTO empleado VALUES (1, 'Larry', 'Chuzon', 'Benites', '986532569', '2000-01-01', 'Jr. Isidora Villagómez # 9377');
+INSERT INTO empleado VALUES (2, 'Denilson', 'Chuzon', 'Benites', '986532569', '2000-01-01', 'Jr. Pedro Acuña # 52 Dpto. 408');
+INSERT INTO empleado VALUES (3, 'Liliana', 'Villegas', 'Villanueva', '986532569', '2000-01-01', 'Av. Florencia Quintanilla # 40528');
 
 INSERT INTO usuario VALUES (1, 1, 1, 'adm', 'adm', 'administrador', 'adm@adm.com');
-INSERT INTO usuario VALUES (2, 2, 2, 'Liliana', 'lili2021', 'vendedor', '@gmail.com');
-INSERT INTO usuario VALUES (3, 3, 2, 'Larry', 'larry2021', 'almacen', '@gmail.com');
+INSERT INTO usuario VALUES (2, 2, 2, 'Liliana', 'lili2021', 'vendedor', 'liliana@gmail.com');
+INSERT INTO usuario VALUES (3, 3, 2, 'Larry', 'larry2021', 'almacen', 'larry@gmail.com');
 
 INSERT INTO cotizacion VALUES (1, 1, 1, '2021-09-10');
 INSERT INTO cotizacion VALUES (2, 2, 1, '2021-10-10');

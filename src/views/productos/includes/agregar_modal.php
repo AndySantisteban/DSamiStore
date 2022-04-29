@@ -38,7 +38,10 @@
 
           <div class="mb-3">
             <label for="agregar-estado" class="col-form-label">Estado</label>
-            <input type="number" class="form-control" id="agregar-estado" name="estado" placeholder="Agregar estado" required></input>
+            <select class="form-select" id="agregar-estado" name="estado" required>
+              <option value="1" selected>Disponible</option>
+              <option value="0">No disponible</option>
+            </select>
           </div>
         </div>
 

@@ -8,32 +8,34 @@
           <button type="button" class="btn-close p-2" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
+
         <div class="modal-body">
           <div class="row">
-            <div class="col-md-12">
-              <label for="name" class="form-label">Nombre de la Proveedor</label>
-              <input type="text" class="form-control" name="nombre" required='true' autofocus>
-            </div>
-            <div class="col-md-12">
-              <label for="name" class="form-label">RUC del Proveedor</label>
-              <input type="text" class="form-control" name="ruc" required='true' autofocus>
-            </div>
-            <div class="col-md-12">
-              <label for="name" class="form-label">Razón social del Proveedor</label>
-              <input type="text" class="form-control" name="razonSocial" required='true' autofocus>
-            </div>
-            <div class="col-md-12">
-              <label for="name" class="form-label">Telefono del Proveedor</label>
-              <input type="text" class="form-control" name="telefono" required='true' autofocus>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" name="nombre" placeholder="Agregar nombre" required autofocus>
             </div>
 
+            <div class="mb-3">
+              <label for="name" class="form-label">RUC</label>
+              <input type="text" class="form-control" name="ruc" placeholder="Agregar RUC" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Razón social</label>
+              <input type="text" class="form-control" name="razonSocial" placeholder="Agregar razón social" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Teléfono</label>
+              <input type="number" class="form-control" name="telefono" placeholder="Agregar teléfono" required>
+            </div>
           </div>
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button class="btn btn-primary btn-block" id="btnEnviar">
-            Aceptar
-          </button>
+          <button type="submit" class="btn btn-primary">Aceptar</button>
         </div>
       </form>
     </div>

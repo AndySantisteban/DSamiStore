@@ -37,12 +37,12 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="editar-telefono" class="col-form-label">Telefono</label>
-                <input type="text" class="form-control" id="editar-telefono" name="telefono" value="<?php echo $empleado->telefono; ?>" required>
+                <input type="number" class="form-control" id="editar-telefono" name="telefono" value="<?php echo $empleado->telefono; ?>" required>
               </div>
 
               <div class="col-md-6">
                 <label for="editar-fechaNac" class="form-label">Fecha nacimiento</label>
-                <input type="text" class="form-control" id="editar-fechaNac" name="fechaNac" value="<?php echo $empleado->fechaNac; ?>" placeholder="Agregar fecha de nacimiento" required>
+                <input type="date" class="form-control" id="editar-fechaNac" name="fechaNac" value="<?php echo $empleado->fechaNac; ?>" placeholder="Agregar fecha de nacimiento" required>
               </div>
             </div>
 

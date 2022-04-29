@@ -31,12 +31,12 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="agregar-telefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" id="agregar-telefono" name="telefono" placeholder="Agregar teléfono" required>
+                <input type="number" class="form-control" id="agregar-telefono" name="telefono" placeholder="Agregar teléfono" required>
               </div>
 
               <div class="col-md-6">
                 <label for="agregar-fechaNac" class="form-label">Fecha nacimiento</label>
-                <input type="text" class="form-control" id="agregar-fechaNac" name="fechaNac" placeholder="Agregar fecha de nacimiento" required>
+                <input type="date" class="form-control" id="agregar-fechaNac" name="fechaNac" placeholder="Agregar fecha de nacimiento" required>
               </div>
             </div>
 

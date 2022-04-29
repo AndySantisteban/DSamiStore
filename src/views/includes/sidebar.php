@@ -6,7 +6,7 @@
         <li class='nav-item'>
             <?php
             $req = $_SERVER["REQUEST_URI"];
-            if($req==='/DSamiStore/src/views/categorias/'){
+            if($req==='/DSamiStore/src/controllers/categorias/'){
                 $res= "active";
             }else{
                 $res= "";
@@ -19,7 +19,7 @@
         <li class='nav-item' >
             <?php
             $req = $_SERVER["REQUEST_URI"];
-            if($req==='/DSamiStore/src/views/productos/'){
+            if($req==='/DSamiStore/src/controllers/productos/'){
                 $res= "active";
             }else{
                 $res= "";
@@ -29,24 +29,10 @@
             echo "</a>";
             ?>
         </li>
-        <li>
-            <?php
-            $req = $_SERVER["REQUEST_URI"];
-            if($req==='/DSamiStore/src/views/productos/#'){
-                $res= "active";
-            }else{
-                $res= "";
-            }
-            echo '<a href="../productos/#" class="nav-link link-dark disabled ' . $res . '" >';
-            echo "Pedidos";
-            echo "</a>";
-            ?>
-        </li>
-
         <?php
         if($_SESSION['username'] === "administrador"){
             $req = $_SERVER["REQUEST_URI"];
-            if($req==='/DSamiStore/src/views/proveedores/'){
+            if($req==='/DSamiStore/src/controllers/proveedores/'){
                 $res= "active";
             }else{
                 $res= "";
@@ -61,7 +47,7 @@
         <?php
         if($_SESSION['username'] === "administrador"){
             $req = $_SERVER["REQUEST_URI"];
-            if($req==='/DSamiStore/src/views/usuarios/'){
+            if($req==='/DSamiStore/src/controllers/usuarios/'){
                 $res= "active";
             }else{
                 $res= "";
@@ -76,7 +62,7 @@
         <?php
         if($_SESSION['username'] === "administrador"){
             $req = $_SERVER["REQUEST_URI"];
-            if($req==='/DSamiStore/src/views/roles/'){
+            if($req==='/DSamiStore/src/controllers/roles/'){
                 $res= "active";
             }else{
                 $res= "";
@@ -91,7 +77,7 @@
         <?php
         if($_SESSION['username'] === "administrador"){
             $req = $_SERVER["REQUEST_URI"];
-            if($req==='/DSamiStore/src/views/empleados/'){
+            if($req==='/DSamiStore/src/controllers/empleados/'){
                 $res= "active";
             }else{
                 $res= "";

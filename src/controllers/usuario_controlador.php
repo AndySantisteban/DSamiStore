@@ -8,22 +8,28 @@ class UsuarioControlador {
 
     public static function listar() {
         session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
 
         $username = $_SESSION['username'];
 
-        if (!$username) {
-            header("location:../../controllers/login");
-        } else {
-            $usuario = Usuario::encontrar($username); 
-            $usuarios = Usuario::listar(); 
-            $roles = Rol::listar(); 
-            $empleados = Empleado::listar(); 
+        $usuario = Usuario::encontrar($username); 
+        $usuarios = Usuario::listar(); 
+        $roles = Rol::listar(); 
+        $empleados = Empleado::listar(); 
 
-            include("../../views/usuarios/index.php");
-        }
+        include("../../views/usuarios/index.php");
     }
 
     public static function agregar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $nombre     = $_REQUEST['nombre'];
         $password   = $_REQUEST['password'];
         $username   = $_REQUEST['username'];
@@ -37,6 +43,12 @@ class UsuarioControlador {
     }
 
     public static function editar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $id         = $_REQUEST['idUsuario'];
         $nombre     = $_REQUEST['nombre'];
         $password   = $_REQUEST['password'];
@@ -51,6 +63,12 @@ class UsuarioControlador {
     }
 
     public static function eliminar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $id = $_REQUEST['idUsuario'];
 
         Usuario::eliminar($id);

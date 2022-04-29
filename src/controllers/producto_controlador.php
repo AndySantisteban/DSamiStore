@@ -10,21 +10,27 @@ class ProductoControlador {
 
     public static function listar() {
         session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
 
         $username = $_SESSION['username'];
 
-        if (!$username) {
-            header("location:../../controllers/login");
-        } else {
-            $usuario = Usuario::encontrar($username); 
-            $categorias = Categoria::listar(); 
-            $productos = Producto::listar(); 
+        $usuario = Usuario::encontrar($username); 
+        $categorias = Categoria::listar(); 
+        $productos = Producto::listar(); 
 
-            include("../../views/productos/index.php");
-        }
+        include("../../views/productos/index.php");
     }
 
     public static function agregar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $nombre      = $_REQUEST['nombre'];
         $idCategoria = $_REQUEST['idCategoria'];
         $descripcion = $_REQUEST['descripcion'];
@@ -45,6 +51,12 @@ class ProductoControlador {
     }
 
     public static function editar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $idProducto  = $_REQUEST['idProducto'];
         $nombre      = $_REQUEST['nombre'];
         $idCategoria = $_REQUEST['idCategoria'];
@@ -67,6 +79,12 @@ class ProductoControlador {
     }
 
     public static function eliminar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $idProducto = $_REQUEST['idProducto'];
 
         Producto::eliminar($idProducto);

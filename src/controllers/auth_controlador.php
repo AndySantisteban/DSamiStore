@@ -9,16 +9,12 @@ class AuthControlador {
     public static function login() {
         session_start();
 
+        if (isset($_SESSION['username'])) {
+            return header("location:../../controllers/categorias");
+        }
+
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-
-            if (!isset($_SESSION['username'])) {
-                include("../../views/login/index.php");
-            } else {
-                $username = $_SESSION['username'];
-                header("location:../../controllers/categorias");
-
-            }
-      
+            include("../../views/login/index.php");
         } else {
             $username = $_POST['username'];
             $password = $_POST['password'];

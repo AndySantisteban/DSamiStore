@@ -9,22 +9,28 @@ class CategoriaControlador {
 
     public static function listar() {
         session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
 
         $username = $_SESSION['username'];
 
-        if (!$username) {
-            header("location:../../controllers/login");
-        } else {
-            $usuario = Usuario::encontrar($username); 
-            $categorias = Categoria::listar(); 
+        $usuario = Usuario::encontrar($username); 
+        $categorias = Categoria::listar(); 
 
-            include("../../views/categorias/index.php");
-        }
+        include("../../views/categorias/index.php");
     }
 
     public static function agregar() {
-        $nombre      = $_REQUEST['nombre'];
-        $descripcion      = $_REQUEST['descripcion'];
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
+        $nombre = $_REQUEST['nombre'];
+        $descripcion = $_REQUEST['descripcion'];
         
         Categoria::agregar($nombre, $descripcion);
         
@@ -32,6 +38,12 @@ class CategoriaControlador {
     }
 
     public static function editar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $idCategoria = $_REQUEST['idCategoria'];
         $nombre      = $_REQUEST['nombre'];
         $descripcion = $_REQUEST['descripcion'];
@@ -42,6 +54,12 @@ class CategoriaControlador {
     }
 
     public static function eliminar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $idCategoria = $_REQUEST['idCategoria'];
 
         Categoria::eliminar($idCategoria);

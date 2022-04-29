@@ -8,20 +8,26 @@ class EmpleadoControlador {
 
     public static function listar() {
         session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
 
         $username = $_SESSION['username'];
 
-        if (!$username) {
-            header("location:../../controllers/login");
-        } else {
-            $usuario = Usuario::encontrar($username); 
-            $empleados = Empleado::listar(); 
+        $usuario = Usuario::encontrar($username); 
+        $empleados = Empleado::listar(); 
 
-            include("../../views/empleados/index.php");
-        }
-  }
+        include("../../views/empleados/index.php");
+    }
 
     public static function agregar() {
+        session_start();
+
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $nombre          = $_REQUEST['nombre'];
         $apellidoMaterno = $_REQUEST['apellidoMaterno'];
         $apellidoPaterno = $_REQUEST['apellidoPaterno'];
@@ -35,6 +41,12 @@ class EmpleadoControlador {
     }
 
     public static function editar() {
+        session_start();
+
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $id              = $_REQUEST['idEmpleado'];
         $nombre          = $_REQUEST['nombre'];
         $apellidoMaterno = $_REQUEST['apellidoMaterno'];
@@ -49,6 +61,12 @@ class EmpleadoControlador {
     }
 
     public static function eliminar() {
+        session_start();
+
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $id = $_REQUEST['idEmpleado'];
 
         Empleado::eliminar($id);

@@ -17,20 +17,26 @@ class ProveedorControlador{
 
     public static function listar() {
         session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
 
         $username = $_SESSION['username'];
 
-        if (!$username) {
-            header("location:../../controllers/login");
-        } else {
-            $usuario = Usuario::encontrar($username); 
-            $proveedores = Proveedor::listar(); 
+        $usuario = Usuario::encontrar($username); 
+        $proveedores = Proveedor::listar(); 
 
-            include("../../views/proveedores/index.php");
-        }
+        include("../../views/proveedores/index.php");
     }
 
     public static function agregar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $nombre              = $_REQUEST['nombre'];
         $ruc 	             = $_REQUEST['ruc'];
         $razonSocial         = $_REQUEST['razonSocial'];
@@ -42,7 +48,12 @@ class ProveedorControlador{
     }
 
     public static function editar() {
-        
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $idProveedor    = $_REQUEST['idProveedor'];
         $nombre         = $_REQUEST['nombre'];
         $ruc 	        = $_REQUEST['ruc'];
@@ -55,6 +66,11 @@ class ProveedorControlador{
     }
 
     public static function eliminar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
 
         $idProveedor = $_REQUEST['idProveedor'];
 
@@ -66,6 +82,12 @@ class ProveedorControlador{
 
     public static function enviarEmail() {
         session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
+        $username = $_SESSION['username'];
 
         $mail = new PHPMailer(true);
 
@@ -81,13 +103,13 @@ class ProveedorControlador{
             $mail->Port       = 587;
         
             
-            $user = Usuario::encontrar($_SESSION['username']);
+            $user = Usuario::encontrar($username);
         
-            //Recipients
+            // Recipients
             $mail->setFrom($user->email, $user->nombre);
             $mail->addAddress($_POST['email_receptor']);
         
-            //Content
+            // Content
             $mail->isHTML(true);
             $mail->Subject = $_POST['subject'];
             $mail->Body    = $_POST['sms'];

@@ -1,31 +1,42 @@
 <?php
-
-require __DIR__ . '../../../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-include("../../controllers/config.php");
+include("../../models/usuario.php");
 include("../../models/rol.php");
 include("../../models/empleado.php");
 include("../../models/proveedor.php");
-include("../../models/usuario.php");
+
+require __DIR__ . '../../../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
+$dotenv->load();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-
 class ProveedorControlador{
 
     public static function listar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
 
-        $categorias = Proveedor::listar();
+        $username = $_SESSION['username'];
 
-        include("../../views/proveedores/includes/tabla.php");
+        $usuario = Usuario::encontrar($username); 
+        $proveedores = Proveedor::listar(); 
+
+        include("../../views/proveedores/index.php");
     }
 
     public static function agregar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $nombre              = $_REQUEST['nombre'];
         $ruc 	             = $_REQUEST['ruc'];
         $razonSocial         = $_REQUEST['razonSocial'];
@@ -33,11 +44,16 @@ class ProveedorControlador{
         
         Proveedor::agregar($nombre, $ruc, $razonSocial, $telefono);
         
-        header("location:../../views/proveedores/index.php");
+        header("location:../../controllers/proveedores");
     }
 
     public static function editar() {
-        
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
         $idProveedor    = $_REQUEST['idProveedor'];
         $nombre         = $_REQUEST['nombre'];
         $ruc 	        = $_REQUEST['ruc'];
@@ -45,21 +61,33 @@ class ProveedorControlador{
         $telefono 	    = $_REQUEST['telefono'];
         
         Proveedor::editar($idProveedor, $nombre, $ruc, $razonSocial, $telefono);
-        header("location:../../views/proveedores/index.php");
+        
+        header("location:../../controllers/proveedores");
     }
 
     public static function eliminar() {
+        session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
 
         $idProveedor = $_REQUEST['idProveedor'];
 
         Proveedor::eliminar($idProveedor);
         
-        header("location:../../views/proveedores/index.php");
+        header("location:../../controllers/proveedores");
     }
 
 
     public static function enviarEmail() {
         session_start();
+    
+        if (!isset($_SESSION['username'])) {
+            return header("location:../../controllers/login");
+        }
+
+        $username = $_SESSION['username'];
 
         $mail = new PHPMailer(true);
 
@@ -75,22 +103,22 @@ class ProveedorControlador{
             $mail->Port       = 587;
         
             
-            $user = Usuario::encontrar($_SESSION['username']);
+            $user = Usuario::encontrar($username);
         
-            //Recipients
+            // Recipients
             $mail->setFrom($user->email, $user->nombre);
             $mail->addAddress($_POST['email_receptor']);
         
-            //Content
+            // Content
             $mail->isHTML(true);
             $mail->Subject = $_POST['subject'];
             $mail->Body    = $_POST['sms'];
             $mail->AltBody = 'Nuevo Mensaje de pedido DSamiStore';
         
             $mail->send();
-            header("location:../../views/proveedores/index.php");
+            header("location:../../controllers/proveedores");
         } catch (Exception $e) {
-            header("location:../../views/proveedores/index.php");
+            header("location:../../controllers/proveedores");
         }
     }
 

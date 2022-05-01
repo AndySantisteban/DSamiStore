@@ -1,5 +1,5 @@
 <?php
-    include("../proveedorControlador.php");
+    include("../proveedor_controlador.php");
 
     ProveedorControlador::eliminar();
 ?>

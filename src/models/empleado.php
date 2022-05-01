@@ -1,5 +1,5 @@
 <?php 
-include("../../controllers/config.php");
+include("../../config/database.php");
 
 class Empleado {
     public $id;
@@ -51,8 +51,9 @@ class Empleado {
             '" . $fechaNac . "',
             '" . $direccion . "'
         )");
-        print_r($consulta);
+
         $resultado = mysqli_query($link, $consulta);
+
         return $resultado;
     }
 

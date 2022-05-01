@@ -14,7 +14,7 @@
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="../../controllers/logout.php">Cerrar sesión</a></li>
+                <li><a class="dropdown-item" href="../../controllers/logout/index.php">Cerrar sesión</a></li>
             </ul>
         </div>
 
